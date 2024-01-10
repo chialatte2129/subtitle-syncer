@@ -1,6 +1,7 @@
 from typing import Callable, Dict, List, Union
 
 import customtkinter as ctk
+from PIL import Image
 
 FilmData = Dict[str, Union[str, ctk.CTkLabel, ctk.CTkButton]]
 
@@ -34,9 +35,17 @@ class ScrollableLabelButtonFrame(ctk.CTkScrollableFrame):
             padx=10,
             anchor="w",
         )
-        remove_btn = ctk.CTkButton(self, text="移除", width=50, height=24)
+
+        delete_btn_image = ctk.CTkImage(Image.open("static/remove.png"), size=(20, 20))
+        download_btn_image = ctk.CTkImage(
+            Image.open("static/download.png"), size=(20, 20)
+        )
+
         download_btn = ctk.CTkButton(
-            self, text="下載", state="normal", width=50, height=24
+            self, text="", image=download_btn_image, width=50, height=24
+        )
+        remove_btn = ctk.CTkButton(
+            self, text="", image=delete_btn_image, width=50, height=24
         )
         if self.command_download is not None:
             download_btn.configure(command=lambda: self.command_download(file_id))

@@ -7,6 +7,7 @@ from typing import List
 
 import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
+from PIL import Image
 
 from .main import Processor
 from .wigets.scrollable_label_btn_frame import FilmData, ScrollableLabelButtonFrame
@@ -26,18 +27,22 @@ class FileUploadApp(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.grid_rowconfigure(0, weight=1)
-        self.title("MP4 Subtitle Adder")
+        self.title("MP4 Subtitle Syncer")
         self.upload_files = []
         self.film_data: List[FilmData] = []
         self.file_paths = []  # 用來儲存已選擇的檔案路徑
 
         title_label = ctk.CTkLabel(
-            master=self, text="Film List", font=ctk.CTkFont(size=30, weight="bold")
+            master=self,
+            text="Subtitle Syncer",
+            font=ctk.CTkFont(size=30, weight="bold"),
         )
         title_label.grid(row=0, column=0, padx=10, pady=(40, 20))
 
         self.upload_button = ctk.CTkButton(
-            master=self, text="Upload", command=self.upload_action
+            master=self,
+            text="Upload",
+            command=self.upload_action,
         )
         self.upload_button.grid(row=1, column=0, padx=10, pady=(10, 10))
 

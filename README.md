@@ -22,10 +22,6 @@ Subtitle Syncer is a desktop application implemented using `Python` + `Whisper` 
 python setup.py
 ```
 
-## Contributing
-
-Subtitle Syncer provides subtitle translation for video footage of international organizational activities, enhancing the accuracy and efficiency of information dissemination.
-
 ## License
 
 MIT

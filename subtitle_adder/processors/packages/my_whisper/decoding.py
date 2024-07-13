@@ -282,10 +282,6 @@ class GreedyDecoder(TokenDecoder):
         else:
             next_tokens = Categorical(logits=logits / self.temperature).sample()
 
-        logprobs = F.log_softmax(logits.float(), dim=-1)
-        current_logprobs = logprobs[torch.arange(logprobs.shape[0]), next_tokens]
-        sum_logprobs += current_logprobs * (tokens[:, -1] != self.eot)
-
         next_tokens[tokens[:, -1] == self.eot] = self.eot
         tokens = torch.cat([tokens, next_tokens[:, None]], dim=-1)
 
@@ -572,8 +568,7 @@ class DecodingTask:
     def _verify_options(self, options: DecodingOptions) -> DecodingOptions:
         if options.beam_size is not None and options.best_of is not None:
             raise ValueError("beam_size and best_of can't be given together")
-        if options.temperature == 0:
-            if options.best_of is not None:
+        if options.temperature == 0 and options.best_of is not None:
                 raise ValueError("best_of with greedy sampling (T=0) is not compatible")
         if options.patience is not None and options.beam_size is None:
             raise ValueError("patience requires beam_size to be given")

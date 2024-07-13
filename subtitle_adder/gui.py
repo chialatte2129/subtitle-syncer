@@ -117,7 +117,7 @@ class FileUploadApp(ctk.CTk):
             for file_info in self.file_paths:
                 Processor(file_info).run()
                 self.update_finish_status(file_info[0])
-            CTkMessagebox(title="Info", message=f"Finish")
+            CTkMessagebox(title="Info", message="Finish")
         except Exception as error:
             print(error)
         finally:
@@ -126,7 +126,7 @@ class FileUploadApp(ctk.CTk):
     def download_file_action(self, file_id):
         print("In: ", file_id)
         if not len(self.file_paths):
-            CTkMessagebox(title="Info", message=f"Can't find file")
+            CTkMessagebox(title="Info", message="Can't find file")
             return
 
         file_path = ""
@@ -152,13 +152,12 @@ class FileUploadApp(ctk.CTk):
             source_file_path = (
                 f"./output/{file_id}/{file_name}"  # Replace with your actual file path
             )
-            # source_file_path = f"./output/97a9965d-3b78-4b38-aae6-fa45f40ee5b3/test.mp4"  # Replace with your actual file path
 
             try:
                 # Copy the source file to the selected destination
                 shutil.copyfile(source_file_path, file_path_str)
                 CTkMessagebox(title="Info", message=f"Save to: {file_path_str}")
-            except Exception as e:
+            except Exception:
                 CTkMessagebox(title="Info", message="Fails to save")
 
     def download_all_files_action(self):

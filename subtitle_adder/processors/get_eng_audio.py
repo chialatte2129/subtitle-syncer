@@ -3,7 +3,7 @@ import subprocess
 
 
 def extract_stream_info(ffprobe_output):
-    stream_blocks: str = re.findall(
+    stream_blocks = re.findall(
         r"\[STREAM\](.*?)\[/STREAM\]", ffprobe_output, re.DOTALL
     )
 

@@ -10,11 +10,13 @@ class ScrollableLabelButtonFrame(ctk.CTkScrollableFrame):
     def __init__(
         self,
         master,
-        film_data: List[FilmData] = [],
+        film_data: List[FilmData] = None,
         command_remove: Callable = None,
         command_download: Callable = None,
         **kwargs,
     ):
+        if film_data is None:
+            film_data = []
         super().__init__(master, **kwargs)
         self.grid_columnconfigure(0, weight=1)
         self.command_download = command_download

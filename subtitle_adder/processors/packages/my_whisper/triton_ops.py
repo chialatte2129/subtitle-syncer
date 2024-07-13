@@ -17,7 +17,7 @@ def dtw_kernel(
     offsets = tl.arange(0, BLOCK_SIZE)
     mask = offsets < M
 
-    for k in range(1, N + M + 1):  # k = i + j
+    for k in range(1, N + M + 1):
         tl.debug_barrier()
 
         p0 = cost + (k - 1) * cost_stride
@@ -50,7 +50,6 @@ def median_kernel(filter_width: int):
         offsets = tl.arange(0, BLOCK_SIZE)
         mask = offsets < y_stride
 
-        x_ptr = x + row_idx * x_stride  # noqa: F841
         y_ptr = y + row_idx * y_stride
 
         LOAD_ALL_ROWS_HERE  # noqa: F821

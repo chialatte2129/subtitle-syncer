@@ -15,10 +15,27 @@ Subtitle Syncer is a desktop application implemented using `Python` + `Whisper` 
 ## Installation
 
 1. Clone the repository.
-2. Install the required dependencies.
-3. Run the project.
+2. Create virtual environment
 
+```sh
+conda create --name myenv python=3.11
 ```
+
+3. Activate virtual environment
+
+```sh
+activate myenv
+```
+
+4. Install the required dependencies.
+
+```sh
+pip install -r requirements.txt
+```
+
+5. Run the project.
+
+```sh
 python setup.py
 ```
 

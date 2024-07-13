@@ -1,4 +1,0 @@
-{
-  "extends": ["github>josepho0918/renovate-config"],
-  "forkProcessing": "enabled"
-}

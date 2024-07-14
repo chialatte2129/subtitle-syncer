@@ -7,7 +7,7 @@ coloredlogs==15.0.1
 ctk==0.1
 CTkMessagebox==2.5
 ctranslate2==4.3.1
-customtkinter==5.2.1
+customtkinter==5.2.2
 darkdetect==0.8.0
 filelock==3.13.1
 flatbuffers==23.5.26

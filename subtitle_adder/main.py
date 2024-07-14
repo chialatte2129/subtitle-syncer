@@ -23,12 +23,9 @@ class Processor:
 
     def run(self):
         complete_filename = os.path.basename(self.file_path)
-        # filename, _ = os.path.splitext(complete_filename)
         _, output_dir = self.create_folder()
 
         input_video_file = self.file_path
-        # output_audio_file = f"{temp_dir}/{filename}.mp3"
-        # subtitle_file = f"{temp_dir}/{filename}.srt"
         output_video_file = f"{output_dir}/{complete_filename}"
 
         # Stage 1: Get English Audio

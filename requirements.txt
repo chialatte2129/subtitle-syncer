@@ -14,7 +14,7 @@ flatbuffers==23.5.26
 fsspec==2023.12.2
 huggingface-hub==0.20.1
 humanfriendly==10.0
-idna==3.6
+idna==3.10
 ipython==5.4.1
 Jinja2==3.1.4
 jupyter-core

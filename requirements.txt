@@ -36,7 +36,7 @@ Pillow==10.1.0
 protobuf==5.27.2
 psutil==6.0.0
 py-cpuinfo==9.0.0
-pyinstaller==6.3.0
+pyinstaller==6.11.0
 pyinstaller-hooks-contrib==2023.11
 pyreadline3==3.4.1
 python-tkdnd==0.2.1

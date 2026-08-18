@@ -40,7 +40,7 @@ pyinstaller==6.3.0
 pyinstaller-hooks-contrib==2023.11
 pyreadline3==3.4.1
 python-tkdnd==0.2.1
-pywin32-ctypes==0.2.2
+pywin32-ctypes==0.2.3
 PyYAML==6.0.1
 regex==2023.12.25
 requests==2.31.0

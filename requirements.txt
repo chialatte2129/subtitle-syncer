@@ -15,7 +15,7 @@ fsspec==2023.12.2
 huggingface-hub==0.20.1
 humanfriendly==10.0
 idna==3.6
-ipython==5.4.1
+ipython==5.10.0
 Jinja2==3.1.4
 jupyter-core
 llvmlite==0.43.0
